@@ -1,0 +1,37 @@
+{
+  "name": "320-token-tools",
+  "version": "1.0.0",
+  "description": "## install",
+  "main": "index.js",
+  "dependencies": {
+    "@openzeppelin/contracts": "^2.3.0",
+    "fs-extra": "^8.1.0",
+    "ganache-cli": "^6.6.0",
+    "stripe": "^5.10.0",
+    "truffle": "^5.0.33",
+    "truffle-hdwallet-provider": "^1.0.17"
+  },
+  "devDependencies": {
+    "nodemon": "latest"
+  },
+  "scripts": {
+    "sol-compile": "cd ethereum; truffle compile",
+    "ganache": "ganache-cli --networkId 1337 --port 8545",
+    "develop": "cd ethereum; nodemon --delay 1 --exec \"truffle test\"",
+    "ganache:staging": "ganache-cli --networkId 4 --port 8545 --secure --unlock 0 --gasPrice 10000000000 --defaultBalanceEther 2 --blockTime 3",
+    "test": "cd ethereum; truffle test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johncoffee/320-token-tools.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johncoffee/320-token-tools/issues"
+  },
+  "homepage": "https://github.com/johncoffee/320-token-tools#readme",
+  "optionalDependencies": {
+    "qrcode-terminal": "^0.12.0"
+  }
+}
