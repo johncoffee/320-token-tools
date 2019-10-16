@@ -1,14 +1,11 @@
 const ERC20CompatibleERC777 = artifacts.require("ERC20CompatibleERC777");
 
-contract('Chiemgauer', function([deployer,acc1]) {
+contract('ERC20CompatibleERC777', function([deployer, acc1]) {
   let instance
 
-  beforeEach(async () => {
-    instance = await ERC20CompatibleERC777.new("Ler", "2")
-  })
-
-  it("should put start with 0", async () => {
-    assert.strictEqual((await instance.balanceOf(deployer)).toNumber(), 0, "should start with 0");
+  it("should start with no supply", async () => {
+    instance = await ERC20CompatibleERC777.new("LerToken", "LER", [deployer])
+    assert.strictEqual((await instance.totalSupply()).toNumber(), 0, "totalSupply should start with 0");
   })
 
 })
